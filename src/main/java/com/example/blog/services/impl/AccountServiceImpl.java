@@ -3,6 +3,7 @@ package com.example.blog.services.impl;
 import com.example.blog.models.Account;
 import com.example.blog.repositories.AccountRepository;
 import com.example.blog.services.AccountService;
+import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,6 +17,7 @@ public class AccountServiceImpl implements AccountService {
     }
 
     @Override
+    @Transactional
     public Account save(Account account) {
         return accountRepository.save(account);
     }
